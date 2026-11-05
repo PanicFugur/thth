@@ -1,0 +1,39 @@
+# Local agent instructions and handover notes
+AGENTS.md
+AGENTS.MD
+handover.md
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors and temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies and caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Build, coverage, and browser-test output
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+
+# Logs
+*.log

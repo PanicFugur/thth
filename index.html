@@ -91,5 +91,223 @@
     <button id="generate" type="button" disabled>Generate</button>
     <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
   </main>
+
+  <!-- Single-token, lowercase ASCII names. Accents, spaces, and punctuation are omitted.
+       Surnames identify authors, scientists, and people who have flown in space;
+       shared surnames appear only once per pool, but may occur across pools. -->
+  <script id="word-pools" type="application/json">
+    {
+      "mythology": [
+        "zeus", "hera", "poseidon", "demeter", "athena", "apollo", "artemis", "ares",
+        "aphrodite", "hephaestus", "hermes", "hestia", "dionysus", "hades", "persephone",
+        "hecate", "helios", "selene", "eos", "nyx", "erebus", "gaia", "uranus", "cronus",
+        "rhea", "oceanus", "tethys", "hyperion", "theia", "iapetus", "themis", "mnemosyne",
+        "phoebe", "coeus", "crius", "prometheus", "epimetheus", "atlas", "eros", "psyche",
+        "nike", "nemesis", "tyche", "iris", "hebe", "hypnos", "thanatos", "morpheus",
+        "pan", "asclepius", "triton", "proteus", "nereus", "amphitrite", "echo", "narcissus",
+        "perseus", "theseus", "heracles", "achilles", "odysseus", "orpheus", "ariadne",
+        "jupiter", "juno", "neptune", "minerva", "mars", "venus", "mercury", "vulcan",
+        "vesta", "ceres", "janus", "saturn", "pluto", "bacchus", "diana", "bellona",
+        "odin", "thor", "loki", "freyja", "freyr", "frigg", "tyr", "heimdall", "baldr",
+        "idunn", "bragi", "skadi", "njord", "sif", "hel", "fenrir", "jormungandr", "sleipnir",
+        "ra", "amun", "osiris", "isis", "horus", "anubis", "thoth", "hathor", "bastet",
+        "sekhmet", "ptah", "sobek", "nephthys", "geb", "nut", "shu", "tefnut", "maat",
+        "khepri", "khnum", "khonsu", "taweret", "bes", "serqet", "neith", "wadjet",
+        "brahma", "vishnu", "shiva", "lakshmi", "saraswati", "parvati", "durga", "ganesha",
+        "krishna", "rama", "hanuman", "indra", "agni", "varuna", "surya", "chandra",
+        "enki", "enlil", "inanna", "ishtar", "marduk", "tiamat", "gilgamesh", "ereshkigal"
+      ],
+      "space": [
+        "cosmos", "universe", "galaxy", "nebula", "quasar", "pulsar", "magnetar", "supernova",
+        "nova", "star", "sun", "moon", "planet", "exoplanet", "asteroid", "comet", "meteor",
+        "meteorite", "meteoroid", "fireball", "bolide", "stardust", "sunlight", "moonlight",
+        "orbit", "eclipse", "transit", "occultation", "conjunction", "opposition", "equinox",
+        "solstice", "zenith", "nadir", "azimuth", "altitude", "declination", "parallax",
+        "parsec", "lightyear", "redshift", "blueshift", "spectrum", "photon", "neutrino",
+        "gravity", "graviton", "spacetime", "singularity", "wormhole", "blackhole", "horizon",
+        "accretion", "supercluster", "cluster", "void", "filament", "halo", "corona",
+        "photosphere", "chromosphere", "heliosphere", "magnetosphere", "ionosphere",
+        "atmosphere", "exosphere", "aurora", "sunspot", "granule", "prominence", "flare",
+        "sol", "sirius", "vega", "rigel", "betelgeuse", "antares", "aldebaran", "altair",
+        "deneb", "polaris", "arcturus", "capella", "procyon", "spica", "regulus", "fomalhaut",
+        "canopus", "achernar", "bellatrix", "mira", "algol", "alnilam", "alnitak", "mintaka",
+        "saiph", "dubhe", "merak", "alioth", "mizar", "alkaid", "alcor", "castor", "pollux",
+        "andromeda", "orion", "cassiopeia", "cygnus", "lyra", "aquila", "draco", "pegasus",
+        "centaurus", "sagittarius", "scorpius", "taurus", "gemini", "aquarius", "pisces",
+        "aries", "cancer", "leo", "virgo", "libra", "capricornus", "perseus", "cepheus",
+        "carina", "vela", "puppis", "crux", "lupus", "hydra", "phoenix", "pavo",
+        "rocket", "lander", "rover", "probe", "satellite", "telescope", "observatory",
+        "spacecraft", "starship", "spacewalk", "spacesuit", "airlock", "thruster", "booster",
+        "payload", "apogee", "perigee", "aphelion", "perihelion", "regolith", "crater"
+      ],
+      "planets": [
+        "mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune",
+        "ceres", "pluto", "haumea", "makemake", "eris", "luna", "phobos", "deimos",
+        "io", "europa", "ganymede", "callisto", "amalthea", "himalia", "elara", "pasiphae",
+        "sinope", "lysithea", "carme", "ananke", "leda", "thebe", "adrastea", "metis",
+        "callirrhoe", "themisto", "megaclite", "taygete", "chaldene", "harpalyke", "kalyke",
+        "iocaste", "erinome", "isonoe", "praxidike", "autonoe", "thyone", "hermippe",
+        "aitne", "eurydome", "euanthe", "euporie", "orthosie", "sponde", "kale",
+        "pasithee", "hegemone", "mneme", "aoede", "thelxinoe", "arche", "kallichore",
+        "helike", "carpo", "eukelade", "cyllene", "kore", "herse", "dia", "eirene",
+        "philophrosyne", "eupheme", "valetudo", "pandia", "ersa",
+        "mimas", "enceladus", "tethys", "dione", "rhea", "titan", "hyperion", "iapetus",
+        "phoebe", "janus", "epimetheus", "helene", "telesto", "calypso", "atlas",
+        "prometheus", "pandora", "pan", "ymir", "paaliaq", "tarvos", "ijiraq", "kiviuq",
+        "mundilfari", "skathi", "albiorix", "erriapus", "siarnaq", "thrymr", "narvi",
+        "methone", "pallene", "polydeuces", "daphnis", "aegir", "bebhionn", "bergelmir",
+        "bestla", "farbauti", "fenrir", "fornjot", "hati", "hyrrokkin", "kari", "loge",
+        "skoll", "surtur", "jarnsaxa", "greip", "tarqeq", "anthe", "aegaeon",
+        "ariel", "umbriel", "titania", "oberon", "miranda", "cordelia", "ophelia",
+        "bianca", "cressida", "desdemona", "juliet", "portia", "rosalind", "belinda",
+        "puck", "caliban", "sycorax", "prospero", "setebos", "stephano", "trinculo",
+        "francisco", "margaret", "ferdinand", "perdita", "mab", "cupid",
+        "triton", "nereid", "naiad", "thalassa", "despina", "galatea", "larissa",
+        "proteus", "halimede", "sao", "laomedeia", "psamathe", "neso", "hippocamp",
+        "charon", "nix", "hydra", "kerberos", "styx", "dysnomia", "hiiaka", "namaka"
+      ],
+      "scifiAuthors": [
+        "asimov", "clarke", "heinlein", "herbert", "leguin", "bradbury", "dick", "lem",
+        "wells", "verne", "shelley", "butler", "delany", "zelazny", "leiber", "sturgeon",
+        "simak", "pohl", "kornbluth", "bester", "vanvogt", "smith", "hamilton", "williamson",
+        "campbell", "gernsback", "stapledon", "huxley", "orwell", "zamyatin", "capek",
+        "strugatsky", "belyaev", "yefremov", "bulgakov", "tolstoy", "anderson", "niven",
+        "pournelle", "benford", "bear", "brin", "card", "harrison", "aldiss", "ballard",
+        "moorcock", "disch", "silverberg", "sheckley", "tenn", "davidson", "knight",
+        "boucher", "russ", "tiptree", "cherryh", "mccaffrey", "norton", "merril",
+        "wilhelm", "willis", "bujold", "vance", "wolfe", "simmons", "banks", "reynolds",
+        "baxter", "egan", "chiang", "liu", "leckie", "miller",
+        "jemisin", "okorafor", "hopkinson", "robinson", "sterling", "gibson", "stephenson",
+        "cadigan", "rucker", "shirley", "shiner", "doctorow", "stross", "scalzi", "corey",
+        "weir", "howey", "vandermeer", "mieville", "bacigalupi", "nagamatsu", "ishiguro",
+        "mandel", "atwood", "lessing", "piercy", "tepper", "slonczewski", "moffett",
+        "fowler", "griffith", "jones", "mcdonald", "macleod", "mcauley", "watts",
+        "kress", "nagata", "yoon", "lee", "chambers", "newitz", "anders", "older",
+        "westerfeld", "tidhar", "tchaikovsky", "chen", "kuang", "roanhorse", "martine",
+        "vinge", "bova", "forward", "hogan", "haldeman", "resnick", "sawyer"
+      ],
+      "scientists": [
+        "newton", "einstein", "galilei", "kepler", "copernicus", "brahe", "hubble", "hawking",
+        "sagan", "feynman", "dirac", "bohr", "heisenberg", "schrodinger", "planck", "born",
+        "pauli", "fermi", "rutherford", "chadwick", "thomson", "maxwell", "faraday", "ampere",
+        "ohm", "volta", "coulomb", "tesla", "oersted", "hertz", "joule", "thompson", "boltzmann",
+        "gibbs", "carnot", "clausius", "curie", "becquerel", "roentgen", "meitner", "hahn",
+        "noether", "euler", "gauss", "riemann", "hilbert", "poincare", "laplace", "lagrange",
+        "fourier", "cauchy", "fermat", "pascal", "leibniz", "descartes", "turing", "hopper",
+        "lovelace", "babbage", "neumann", "shannon", "wiener", "church", "godel", "lovasz",
+        "darwin", "wallace", "mendel", "linnaeus", "lamarck", "humboldt", "goodall", "carson",
+        "mcclintock", "franklin", "watson", "crick", "wilkins", "pauling", "sanger", "hodgkin",
+        "perutz", "kendrew", "doudna", "charpentier", "kariko", "weissman", "yonath",
+        "ostrom", "pasteur", "koch", "lister", "fleming", "jenner", "snow", "semmelweis",
+        "harvey", "vesalius", "raman", "bose", "saha", "chandrasekhar", "ramanujan",
+        "lovelock", "margulis", "woese", "salk", "sabin", "tu", "fischer", "debye",
+        "nernst", "haber", "langmuir", "zewail", "prigogine",
+        "leavitt", "payne", "cannon", "rubin", "bell", "burnell", "herschel", "halley",
+        "oort", "kuiper", "zwicky", "oppenheimer", "salam", "weinberg", "glashow", "gellmann",
+        "yang", "wu", "yukawa", "tomonaga", "nambu", "townes", "gabor", "bardeen",
+        "brattain", "shockley", "boyle", "lavoisier", "dalton", "avogadro", "mendeleev",
+        "moseley", "seaborg", "berzelius", "wohler", "kekule", "arrhenius", "vanthoff"
+      ],
+      "astronauts": [
+        "gagarin", "titov", "tereshkova", "leonov", "komarov", "bykovsky", "popovich",
+        "nikolayev", "belyayev", "beregovoy", "shatalov", "yeliseyev", "kubasov", "volkov",
+        "dobrovolsky", "patsayev", "savinykh", "savitskaya", "dzhanibekov", "romanenko",
+        "grechko", "ryumin", "kovalyonok", "ivanchenkov", "lyakhov", "lebedev", "solovyov",
+        "krikalev", "polyakov", "padalka", "kononenko", "surayev", "skvortsov", "ryzhikov",
+        "shepard", "grissom", "glenn", "carpenter", "schirra", "cooper", "armstrong",
+        "aldrin", "collins", "lovell", "borman", "anders", "stafford", "young", "cernan",
+        "conrad", "bean", "gordon", "haise", "swigert", "mitchell", "scott", "irwin",
+        "worden", "duke", "mattingly", "schmitt", "evans", "ride", "jemison", "resnik",
+        "mccandless", "musgrave", "crippen", "bolden", "bluford", "mcnair", "mccool",
+        "husband", "chawla", "clark", "anderson", "ramon", "mcmonagle", "foale",
+        "hadfield", "garneau", "payette", "saintjacques", "thirsk", "bondar", "maclean",
+        "pesquet", "parmitano", "cristoforetti", "nespoli", "guidoni", "vittori", "maurer",
+        "gerst", "schlegel", "merbold", "reiter", "fuglesang", "peake", "sharman",
+        "mohri", "mukai", "wakata", "noguchi", "hoshide", "yamazaki", "yui", "onishi",
+        "kanai", "yang", "nie", "zhai", "jing", "liu", "wang", "tang", "fei", "deng"
+      ]
+    }
+  </script>
+  <script id="generator">
+    'use strict';
+
+    const wordPools = JSON.parse(document.getElementById('word-pools').textContent);
+    // Shared names across categories must not get extra weight.
+    const words = [...new Set(Object.values(wordPools).flat())];
+
+    function generateName(random = Math.random) {
+      const wordCount = random() < 0.5 ? 2 : 3;
+      const available = [...words];
+      const parts = [];
+
+      for (let i = 0; i < wordCount; i++) {
+        const index = Math.floor(random() * available.length);
+        parts.push(available.splice(index, 1)[0]);
+      }
+
+      if (random() < 0.5) {
+        const digits = 2 + Math.floor(random() * 4);
+        const minimum = 10 ** (digits - 1);
+        const number = minimum + Math.floor(random() * minimum * 9);
+        parts.push(String(number));
+      }
+
+      return parts.join('-');
+    }
+
+    const output = document.getElementById('name-output');
+    const generateButton = document.getElementById('generate');
+    const copyButton = document.getElementById('copy');
+    const feedback = document.getElementById('feedback');
+    let feedbackTimer;
+    let generation = 0;
+    let copyPending = false;
+
+    function clearFeedback() {
+      clearTimeout(feedbackTimer);
+      feedback.textContent = '';
+    }
+
+    function showFeedback(message, duration = 2000) {
+      clearFeedback();
+      feedback.textContent = message;
+      feedbackTimer = setTimeout(() => { feedback.textContent = ''; }, duration);
+    }
+
+    generateButton.addEventListener('click', () => {
+      output.textContent = generateName();
+      generation++;
+      clearFeedback();
+      copyButton.disabled = copyPending;
+    });
+
+    copyButton.addEventListener('click', async () => {
+      if (generation === 0 || copyPending) return;
+      clearFeedback();
+
+      if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        showFeedback('Clipboard unavailable. Select name and copy manually.', 6000);
+        return;
+      }
+
+      const copiedGeneration = generation;
+      const name = output.textContent;
+      copyPending = true;
+      copyButton.disabled = true;
+      try {
+        await navigator.clipboard.writeText(name);
+        if (generation === copiedGeneration) showFeedback('Copied!');
+      } catch {
+        if (generation === copiedGeneration) {
+          showFeedback('Could not copy. Select name and copy manually.', 6000);
+        }
+      } finally {
+        copyPending = false;
+        copyButton.disabled = false;
+      }
+    });
+
+    generateButton.disabled = false;
+  </script>
 </body>
 </html>
