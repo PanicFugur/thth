@@ -41,11 +41,12 @@ test('representative entries belong to their expected pools', () => {
   }
 });
 
-test('two buttons start disabled and word pools remain non-executable data', () => {
+test('three buttons start disabled and word pools remain non-executable data', () => {
   const buttons = [...html.matchAll(/<button\b([^>]*)>/g)];
-  assert.equal(buttons.length, 2);
+  assert.equal(buttons.length, 3);
   for (const button of buttons) assert.match(button[1], /\bdisabled\b/);
   const scripts = [...html.matchAll(/<script\b([^>]*)>/g)];
-  assert.equal(scripts.length, 2);
-  assert.match(scripts[0][1], /type="application\/json"/);
+  assert.equal(scripts.length, 3);
+  const dataScript = scripts.find(script => /id="word-pools"/.test(script[1]));
+  assert.match(dataScript[1], /type="application\/json"/);
 });
